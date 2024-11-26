@@ -1,0 +1,71 @@
+﻿/* Nav Styling */
+nav {
+    background-color: #001e28;
+    height: 17vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* Image styling */
+.nav--img {
+    width: 200px;
+    margin-left: -50px;
+}
+
+/* Root container styles */
+.root-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* Root anchor styles */
+.root {
+    height: 100%;
+}
+
+    /* Links in nav */
+    .root a {
+        color: white;
+        margin: 0 30px;
+        height: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+    }
+
+        /* Icon in the nav links */
+        .root a i {
+            margin-right: 5px;
+        }
+
+/* User authentication button */
+.user-auth {
+    padding: 10px 20px;
+    background-color: #ff8f07 !important;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+    .user-auth:hover {
+        background-color: #e67e00 !important;
+    }
+
+    /* Links inside the user-auth button */
+    .user-auth a {
+        color: white;
+        text-decoration: none;
+    }
+
+/* Active link styling */
+.root a.active {
+    color: #ff8f07 !important; /* Active links show the primary color */
+}
+
+/* Hover effect for nav links */
+.root a:hover {
+    color: #ff8f07 !important; /* Links turn orange on hover */
+}

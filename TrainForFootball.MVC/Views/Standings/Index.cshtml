@@ -1,0 +1,131 @@
+﻿@model IEnumerable<Team>
+
+@{
+    ViewData["Title"] = "Ranking";
+}
+
+<h1 class="text-center my-4 text-uppercase">@ViewData["Title"]</h1>
+
+<!-- Sezione Leghe -->
+<div class="mb-4">
+    <h5 class="text-center">Select League</h5>
+    <form method="get" action="/Standings/Index">
+        <div class="d-flex flex-wrap gap-2 justify-content-center">
+
+            @foreach (var league in (List<TrainForFootball.MVC.Models.League>)ViewBag.Leagues)
+            {
+                <button type="submit"
+                
+                        class="btn btn-outline-primary btn-sm league-button @(ViewBag.SelectedLeague != null && (int)ViewBag.SelectedLeague == league.LeagueId ? "selected" : "")"
+                        name="selectedLeague"
+                        value="@league.LeagueId">
+                    @league.Name
+                </button>
+            }
+        </div>
+    </form>
+</div>
+
+
+<div class="table-responsive mt-4">
+    <div class="d-flex justify-content-between align-items-center">
+        <h5 class="text-center mb-0 pb-3">Team Standings</h5>
+
+        <!-- Legenda basata sulla lega selezionata -->
+        <div class="legend d-flex align-items-center">
+            @if (ViewBag.SelectedLeague == 1) // Serie A
+            {
+                <div class="d-flex align-items-center me-3">
+                    <div class="legend-box blue"></div>
+                    <span class="ms-2">Champions League</span>
+                </div>
+                <div class="d-flex align-items-center me-3">
+                    <div class="legend-box orange"></div>
+                    <span class="ms-2">UEFA Europa League</span>
+                </div>
+                <div class="d-flex align-items-center me-3">
+                    <div class="legend-box green"></div>
+                    <span class="ms-2">Europa Conference League</span>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="legend-box red"></div>
+                    <span class="ms-2">Relegation</span>
+                </div>
+            }
+            else if (ViewBag.SelectedLeague == 2) // Serie B
+            {
+                <div class="d-flex align-items-center me-3">
+                    <div class="legend-box green"></div>
+                    <span class="ms-2">Promotion</span>
+                </div>
+                <div class="d-flex align-items-center me-3">
+                    <div class="legend-box orange"></div>
+                    <span class="ms-2">Promotion Playoffs</span>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="legend-box red"></div>
+                    <span class="ms-2">Relegation</span>
+                </div>
+            }
+        </div>
+    </div>
+
+
+    <table class="table table-striped table-hover align-middle">
+        <thead class="table-dark">
+            <tr>
+                <th>Position</th>
+                <th>Team</th>
+                <th>Played Matches</th>
+                <th>Wins</th>
+                <th>Draws</th>
+                <th>Losses</th>
+                <th>Goals Scored</th>
+                <th>Goals Conceded</th>
+                <th>Points</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var team in Model.Select((value, index) => new { index, value }))
+            {
+                // Serie A: regole originali
+                if (ViewBag.SelectedLeague != null && (int)ViewBag.SelectedLeague == 1)
+                {
+                    <tr class="data-color @(team.index < 4 ? "border-left-blue" : "")
+                                    @(team.index == 4 ? "border-left-orange" : "")
+                                    @(team.index == 5 ? "border-left-green" : "")
+                                    @(team.index > 16 ? "border-left-red" : "")">
+                        <td>@(team.index + 1)</td> <!-- Position -->
+                        <td class="fw-bold">@team.value.SquadName</td> <!-- Team name -->
+                        <td>@(team.value.TeamStats.MatchesWin + team.value.TeamStats.MatchesDrawn + team.value.TeamStats.MatchesLost)</td> <!-- Played matches -->
+                        <td>@team.value.TeamStats.MatchesWin</td> <!-- Wins -->
+                        <td>@team.value.TeamStats.MatchesDrawn</td> <!-- Draws -->
+                        <td>@team.value.TeamStats.MatchesLost</td> <!-- Losses -->
+                        <td>@team.value.TeamStats.GoalsScored</td> <!-- Goals scored -->
+                        <td>@team.value.TeamStats.GoalsConceded</td> <!-- Goals conceded -->
+                        <td class="fw-bold">@team.value.TeamStats.SeasonPoint</td> <!-- Points -->
+                    </tr>
+                }
+                // Serie B: nuove regole
+                else if (ViewBag.SelectedLeague != null && (int)ViewBag.SelectedLeague == 2)
+                {
+                    <tr class="data-color @(team.index < 2 ? "border-left-green" : "")
+                                    @(team.index >= 2 && team.index < 8 ? "border-left-orange" : "")
+                                    @(team.index >= 15 && team.index < 20 ? "border-left-red" : "")">
+                        <td>@(team.index + 1)</td> <!-- Position -->
+                        <td class="fw-bold">@team.value.SquadName</td> <!-- Team name -->
+                        <td>@(team.value.TeamStats.MatchesWin + team.value.TeamStats.MatchesDrawn + team.value.TeamStats.MatchesLost)</td> <!-- Played matches -->
+                        <td>@team.value.TeamStats.MatchesWin</td> <!-- Wins -->
+                        <td>@team.value.TeamStats.MatchesDrawn</td> <!-- Draws -->
+                        <td>@team.value.TeamStats.MatchesLost</td> <!-- Losses -->
+                        <td>@team.value.TeamStats.GoalsScored</td> <!-- Goals scored -->
+                        <td>@team.value.TeamStats.GoalsConceded</td> <!-- Goals conceded -->
+                        <td class="fw-bold">@team.value.TeamStats.SeasonPoint</td> <!-- Points -->
+                    </tr>
+                }
+            }
+        </tbody>
+
+    </table>
+</div>
+

@@ -1,0 +1,127 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+<style>
+    .displayLogin {
+        display: none !important;
+    }
+    :root {
+        --hover: #ffb56e;
+    }
+
+    .loginError {
+        display: none;
+        text-align: center;
+        padding: 5px 10px;
+        border-radius: 20px;
+        border: 1px solid red;
+        max-width: 250px;
+        color: red;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+
+    :root {
+        --primary-color: #FFA500; /* Colore arancione primario */
+        --hover-color: #ffb56e; /* Colore hover */
+        --dark-background: #273e47; /* Sfondo scuro */
+    }
+    /* Stile base per il pulsante di generazione delle partite */
+    .generate-button {
+        background-color: orange !important; /* Colore di sfondo bianco per il pulsante */
+        border: 2px solid orange !important; /* Bordo arancione */
+        color: white !important; /* Testo nero */
+        transition: all 0.3s ease; /* Transizione fluida */
+    }
+
+        /* Stile per il pulsante in hover */
+        .generate-button:hover {
+            background-color: var(--hover) !important; /* Colore di sfondo chiaro per l'hover */
+            border-color: orange !important; /* Bordo arancione */
+            color: black !important; /* Testo nero */
+        }
+
+        /* Stile per il pulsante quando è cliccato */
+        .generate-button:active {
+            background-color: orange !important; /* Cambia il colore di sfondo in arancione quando cliccato */
+            color: white !important; /* Testo bianco */
+            border-color: orange !important; /* Bordo arancione */
+        }
+</style>
+<h2 style="color: var(--primary-color); text-align: center; margin-bottom: 20px;">LOGIN</h2>
+
+<div class="loginError">
+    <i class="fa-solid fa-circle-exclamation"></i> I dati inseriti sono errati
+</div>
+
+<div style="max-width: 400px; margin: auto; background-color: var(--dark-background); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+    <div class="form-group">
+        <label for="email" style="color: white;">Email</label>
+        <input type="email"
+               name="email"
+               id="email"
+               class="form-control"
+               style="background-color: #1e1e1e; color: white; border: 1px solid var(--primary-color);"
+               required />
+    </div>
+    <div class="form-group" style="margin-top: 15px;">
+        <label for="password" style="color: white;">Password</label>
+        <input type="password"
+               name="password"
+               id="password"
+               class="form-control"
+               style="background-color: #1e1e1e; color: white; border: 1px solid var(--primary-color);"
+               required />
+    </div>
+    <div class="form-group" style="text-align: center; margin-top: 20px;">
+        <button type="submit"
+                class="btn generate-button"
+                onclick="login()">
+            Login
+        </button>
+    </div>
+</div>
+
+<script>
+    async function login() {
+        const userEmail = document.getElementById("email").value.trim();
+        const userPassword = document.getElementById("password").value.trim();
+
+        const data = {
+            email: userEmail,
+            password: userPassword
+        };
+
+        try {
+            const request = await fetch("Login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            });
+
+            const response = await request.json();
+
+            if (response.success) {
+                localStorage.setItem("userLogged", response.userEmail);
+                 location.href = '/';
+            } else {
+                document.querySelector(".loginError").style.display = "block";
+
+                setTimeout(function() {
+                    document.querySelector(".loginError").style.display = "none";
+                }, 2000)
+            }
+        } catch (error) {
+                alert("Errore: " + error.message);
+            }
+        }
+</script>
+
+@if (!string.IsNullOrEmpty(ViewData["ErrorMessage"]?.ToString()))
+{
+    <div class="alert alert-danger" style="color: white; background-color: #d9534f; border-radius: 5px; margin-top: 20px; text-align: center;">
+        @ViewData["ErrorMessage"]
+    </div>
+}

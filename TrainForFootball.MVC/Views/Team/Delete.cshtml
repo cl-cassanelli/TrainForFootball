@@ -1,0 +1,14 @@
+﻿@model TrainForFootball.MVC.Models.Team
+
+@{
+    ViewData["Title"] = "Cancella Squadra";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>Sei sicuro di voler cancellare la squadra: <strong>@Model.SquadName</strong>?</p>
+
+<form method="post">
+    <button type="submit" class="btn btn-danger">Cancella</button>
+    <a href="@Url.Action("Index", "Team")" class="btn btn-secondary">Annulla</a>
+</form>

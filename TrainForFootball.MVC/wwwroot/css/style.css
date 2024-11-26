@@ -1,0 +1,189 @@
+﻿:root {
+    --primary-color: #FFA500 !important;
+    --hover-color: #ffb56e !important;
+    --dark-background: #273e47 !important;
+    --text-light: #f4f4f9 !important;
+    --login-color: #ffc107 !important;
+}
+
+/* Nav Styling */
+nav {
+    height: 17vh !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-around !important;
+}
+
+.nav--img {
+    width: 200px !important;
+    margin-left: -50px !important;
+}
+nav .nav-link:hover {
+    color: #273e47 !important;
+}
+.root-container {
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.root {
+    height: 100% !important;
+}
+
+    .root a {
+        color: var(--text-light) !important;
+        margin: 0 30px !important;
+        height: 100% !important;
+        text-align: center !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-decoration: none !important;
+    }
+
+        .root a i {
+            margin-right: 5px !important;
+        }
+
+        .root a.active, .root a:hover {
+            color: var(--primary-color) !important;
+        }
+
+/* User Authentication Button */
+.user-auth {
+    padding: 10px 20px !important;
+    background-color: #FFA500) !important;
+    border-radius: 10px !important;
+    transition: background-color 0.3s ease !important;
+}
+
+    .user-auth:hover {
+        background-color: #e67e00 !important;
+    }
+
+    .user-auth a {
+        color: var(--text-light) !important;
+        text-decoration: none !important;
+    }
+    .user-auth .text-white:hover {
+        color: #273e47 !important;
+        text-decoration: none !important;
+    }
+
+/* Table Styling */
+.table-responsive {
+    background-color: var(--dark-background) !important;
+    padding: 20px !important;
+    border-radius: 10px !important;
+}
+
+.table-dark th {
+    background-color: var(--primary-color) !important;
+    color: var(--text-light) !important;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+    background-color: #1e1e1e !important;
+}
+
+.table-striped tbody tr:nth-child(even) {
+    background-color: #252525 !important;
+}
+
+.table-hover tbody tr:hover {
+    background-color: var(--hover-color) !important;
+    color: var(--text-light) !important;
+}
+
+.table th, .table td {
+    border-color: #333 !important;
+    color: #273e47 !important;
+}
+
+/* Buttons */
+.league-button, .date-button, .generate-button {
+    border: 2px solid var(--primary-color) !important;
+    background-color: var(--primary-color) !important;
+    color: var(--text-light) !important;
+    padding: 10px !important;
+    border-radius: 5px !important;
+    font-size: 1rem !important;
+    font-weight: bold !important;
+    transition: all 0.3s ease !important;
+
+}
+
+.league-button:hover, .date-button:hover, .generate-button:hover {
+        background-color: var(--hover-color) !important;
+        color: black !important;
+    }
+
+    button:active, .league-button.selected, .date-button.selected, .generate-button:active {
+        background-color: var(--primary-color) !important;
+        color: var(--text-light) !important;
+    }
+
+
+    /* Cards */
+    .card {
+        background-color: #1b2a30 !important;
+        border: none !important;
+        border-radius: 10px !important;
+        padding: 15px !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2) !important;
+        color: var(--text-light) !important;
+        margin-bottom: 20px !important;
+    }
+
+    .card h3 {
+        font-size: 1.25rem !important;
+        margin-bottom: 10px !important;
+        color: var(--primary-color) !important;
+    }
+
+/* Miscellaneous */
+ul {
+    list-style: none !important;
+    padding: 0 !important;
+}
+
+li {
+    padding: 10px !important;
+    background-color: var(--dark-background) !important;
+    border-radius: 6px !important;
+    margin-bottom: 10px !important;
+}
+
+    li:hover {
+        background-color: var(--hover-color) !important;
+        transition: 0.3s ease !important;
+        color: #273e47 !important;
+    }
+
+
+button.p-3.m-2 {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px; /* Migliore proporzione */
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Ombra per profondità */
+    transition: all 0.3s ease; /* Transizione per un effetto fluido */
+    cursor: pointer;
+}
+
+    button.p-3.m-2:hover {
+        background-color: var(--hover-color);
+        color: var(--dark-background); /* Contrasto sul hover */
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Aumenta l'ombra al passaggio */
+        transform: translateY(-2px); /* Leggera elevazione */
+    }
+
+    button.p-3.m-2:active {
+        background-color: var(--login-color); /* Effetto click */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Riduce l'ombra */
+        transform: translateY(2px); /* Effetto "premuto" */
+    }

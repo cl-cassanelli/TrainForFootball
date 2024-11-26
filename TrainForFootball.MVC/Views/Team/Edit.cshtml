@@ -1,0 +1,34 @@
+﻿@model TrainForFootball.MVC.Models.Team
+
+@{
+    ViewData["Title"] = "Modifica Squadra";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="SquadName">Nome Squadra</label>
+        <input type="text" class="form-control" id="SquadName" name="SquadName" value="@Model.SquadName" />
+    </div>
+    <div class="form-group">
+        <label for="FondationYear">Anno di Fondazione</label>
+        <input type="number" class="form-control" id="FondationYear" name="FondationYear" value="@Model.FondationYear" />
+    </div>
+    <div class="form-group">
+        <label for="City">Città</label>
+        <input type="text" class="form-control" id="City" name="City" value="@Model.City" />
+    </div>
+    <div class="form-group">
+        <label for="ColorOfClub">Colori del Club</label>
+        <input type="text" class="form-control" id="ColorOfClub" name="ColorOfClub" value="@Model.ColorOfClub" />
+    </div>
+    <div class="form-group">
+        <label for="StadiumName">Nome Stadio</label>
+        <input type="text" class="form-control" id="StadiumName" name="StadiumName" value="@Model.StadiumName" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Salva Modifiche</button>
+</form>
+
+<a href="@Url.Action("Index", "Team")" class="btn btn-secondary">Indietro</a>

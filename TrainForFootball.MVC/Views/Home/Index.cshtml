@@ -1,0 +1,85 @@
+﻿@model IEnumerable<TrainForFootball.MVC.Models.Team>
+
+<div class="row">
+    <!-- Colonna sinistra -->
+    <div class="col-lg-3">
+        <div class="card">
+            <h2>Leagues</h2>
+            <!-- Link statici per le leghe -->
+            <a href="https://localhost:7187/Standings/Index?selectedLeague=1" class="btn league-button p-3 m-2">
+                Serie A
+            </a>
+            <a href="https://localhost:7187/Standings/Index?selectedLeague=2" class="btn league-button p-3 m-2">
+                Serie B
+            </a>
+            <!-- Aggiungi altri link statici se necessario -->
+        </div>
+    </div>
+
+
+    <!-- Colonna centrale -->
+    <div class="col-lg-6">
+        <!-- Card Serie A -->
+        <div class="card">
+            <h2>Upcoming Matches - Serie A</h2>
+            @if (ViewBag.ClosestMatchesSerieA != null && ViewBag.ClosestMatchesSerieA.Count > 0)
+            {
+                <ul>
+                    @foreach (var match in ViewBag.ClosestMatchesSerieA as List<TrainForFootball.MVC.Models.Match>)
+                    {
+                        <li>
+                            <strong>@match.HomeTeam.SquadName</strong> vs
+                            <strong>@match.AwayTeam.SquadName</strong>
+                            - @match.MatchDate.ToString("HH:mm dd/MM/yyyy")
+                        </li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <p>No matches available for Serie A.</p>
+            }
+        </div>
+
+        <!-- Card Serie B -->
+        <div class="card">
+            <h2>Upcoming Matches - Serie B</h2>
+            @if (ViewBag.ClosestMatchesSerieB != null && ViewBag.ClosestMatchesSerieB.Count > 0)
+            {
+                <ul>
+                    @foreach (var match in ViewBag.ClosestMatchesSerieB as List<TrainForFootball.MVC.Models.Match>)
+                    {
+                        <li>
+                            <strong>@match.HomeTeam.SquadName</strong> vs
+                            <strong>@match.AwayTeam.SquadName</strong>
+                            - @match.MatchDate.ToString("HH:mm dd/MM/yyyy")
+                        </li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <p>No matches available for Serie B.</p>
+            }
+        </div>
+    </div>
+
+    <!-- Colonna destra -->
+    <div class="col-lg-3">
+        <div class="card">
+            <h2>Rankings</h2>
+            @foreach (var league in ViewBag.TopTeamsByLeague as List<KeyValuePair<TrainForFootball.MVC.Models.League, List<TrainForFootball.MVC.Models.Team>>>)
+            {
+                <h3>@league.Key.Name</h3>
+                <ul>
+                    @foreach (var team in league.Value)
+                    {
+                        <li>
+                            <strong>@team.SquadName</strong> - Punti: @team.TeamStats.SeasonPoint
+                        </li>
+                    }
+                </ul>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,149 @@
+﻿@model IEnumerable<TrainForFootball.MVC.Models.Match>
+
+<form method="get" asp-action="Index">
+    <h1 class="text-center my-4 text-uppercase">Match Results</h1>
+    <!-- Sezione Leghe -->
+    <div class="mb-4">
+        <h5 class="text-center">Select League</h5>
+        <div class="d-flex flex-wrap gap-2 justify-content-center">
+            <button type="submit"
+                    class="btn btn-outline-primary btn-sm league-button @(ViewBag.SelectedLeague == null ? "selected" : "")"
+                    name="selectedLeague"
+                    value="">
+                All Leagues
+            </button>
+            @foreach (var league in ViewBag.Leagues as List<TrainForFootball.MVC.Models.League>)
+            {
+                <button type="submit"
+                        class="btn btn-outline-primary btn-sm league-button @(ViewBag.SelectedLeague != null && (int)ViewBag.SelectedLeague == league.LeagueId ? "selected" : "")"
+                        name="selectedLeague"
+                        value="@league.LeagueId">
+                    @league.Name
+                </button>
+            }
+        </div>
+    </div>
+
+    <!-- Sezione Date -->
+    <div class="mb-4">
+        <h5 class="text-center">Select Date</h5>
+
+        @*  sezione carosello *@
+        <div class="container">
+            <div id="dateCarousel" class="carousel slide position-relative" data-bs-ride="false" data-bs-interval="false">
+                <div class="carousel-inner">
+                    @if (ViewBag.AvailableDates != null && ViewBag.AvailableDates.Count > 0)
+                    {
+                        var dates = ViewBag.AvailableDates as List<DateTime>;
+                        int groupSize = 8;
+                        int totalGroups = (int)Math.Ceiling((double)dates.Count / groupSize);
+
+                        for (int groupIndex = 0; groupIndex < totalGroups; groupIndex++)
+                        {
+                            <div class="carousel-item @(groupIndex == 0 ? "active" : "")">
+                                <div class="d-flex flex-wrap gap-2 justify-content-center">
+                                    @for (int i = groupIndex * groupSize; i < Math.Min((groupIndex + 1) * groupSize, dates.Count); i++)
+                                    {
+                                        var date = dates[i];
+                                        <button type="submit"
+                                                class="btn btn-sm date-button @(ViewBag.SelectedDate != null && ((DateTime)ViewBag.SelectedDate).Date == date.Date ? "selected" : "")"
+                                                name="selectedDate"
+                                                value="@date.ToString("yyyy-MM-dd")"
+                                                style="@(ViewBag.SelectedDate != null && ((DateTime)ViewBag.SelectedDate).Date == date.Date
+                                                ? "background-color: orange; color: white; border-color: orange;"
+                                                : "background-color: white; color: black; border-color: orange;")">
+                                            @date.ToString("dd MMM yyyy")
+                                        </button>
+                                    }
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="carousel-item active">
+                            <span class="text-muted">No dates available</span>
+                        </div>
+                    }
+                </div>
+                <!-- Pulsante Precedente -->
+                <button class="carousel-control-prev custom-carousel-control" type="button" data-bs-target="#dateCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <!-- Pulsante Successivo -->
+                <button class="carousel-control-next custom-carousel-control" type="button" data-bs-target="#dateCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+
+        </div>
+</form>
+
+
+<div class="table-responsive mt-4">
+    <h5 class="text-center">Matches Available</h5>
+    <table class="table table-striped table-hover align-middle">
+        <thead class="table-dark">
+            <tr>
+                <th>Date</th>
+                <th>Day Number</th>
+                <th>Home Team</th>
+                <th>Away Team</th>
+                <th class="text-center">Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var match in Model)
+            {
+                <tr class="data-color">
+                    <td>@match.MatchDate.ToString("dd MMM yyyy")</td>
+                    <td>@match.MatchDayNum</td>
+                    <td>@match.HomeTeam?.SquadName</td>
+                    <td>@match.AwayTeam?.SquadName</td>
+                    <td class="text-center fw-bold">
+                        @(match.MatchResult != null ? $"{match.MatchResult.HomeTeamScore} - {match.MatchResult.AwayTeamScore}" : "Pending")
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- Bottone per generare risultati -->
+<form asp-action="GenerateResults" method="post">
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="form-group mb-3" style="max-width: 250px;">
+            <label for="leagueSelect" class="form-label" style="font-size: 18px; font-weight: 600;">
+                Select League
+            </label>
+            <select class="form-control form-control-sm"
+                    id="leagueSelect"
+                    name="leagueId"
+                    required
+                    style="font-size: 14px; padding: 12px; border-radius: 5px;">
+                <option value="" disabled selected>-- League --</option>
+                @foreach (var league in ViewBag.Leagues as List<TrainForFootball.MVC.Models.League>)
+                {
+                    <option value="@league.LeagueId">@league.Name</option>
+                }
+            </select>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center">
+        <button type="submit" class="btn btn-primary btn-lg generate-button">
+            Generate Result
+        </button>
+    </div>
+</form>
+
+<script>
+    if (localStorage.getItem("userLogged") != null) {
+        document.getElementById("generateResult").classList.remove("displayLogin");
+    } else {
+        document.getElementById("generateResult").classList.add("displayLogin");
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

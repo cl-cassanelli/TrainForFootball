@@ -1,0 +1,47 @@
+﻿@model IEnumerable<TrainForFootball.MVC.Models.Team>
+
+@{
+    ViewData["Title"] = "Elenco Squadre";
+}
+
+@if (Model == null || !Model.Any())
+{
+    <p>No teams available.</p>  <!-- Messaggio se il modello è null o vuoto -->
+}
+else
+{
+    <h1>@ViewData["Title"]</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Anno di Fondazione</th>
+                <th>Città</th>
+                <th>Colori del Club</th>
+                <th>Nome Stadio</th>
+                <th>Azioni</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var team in Model)
+            {
+                <tr>
+                    <td>@team.TeamId</td>
+                    <td>@team.SquadName</td>
+                    <td>@team.FondationYear</td>
+                    <td>@team.City</td>
+                    <td>@team.ColorOfClub</td>
+                    <td>@team.StadiumName</td>
+                    <td>
+                        <a href="@Url.Action("Edit", "Team", new { id = team.TeamId })" class="btn btn-primary">Modifica</a>
+                        <a href="@Url.Action("Delete", "Team", new { id = team.TeamId })" class="btn btn-danger">Cancella</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a href="@Url.Action("Create", "Team")" class="btn btn-success">Aggiungi Squadra</a>
+}

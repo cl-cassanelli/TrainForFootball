@@ -1,0 +1,151 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\giuse\\Desktop\\TrainForFootball.MVC\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BCE35D2B-5F34-4B3C-A88A-087098E701A1}|TrainForFootball.MVC\\TrainForFootball.MVC.csproj|c:\\users\\giuse\\desktop\\trainforfootball.mvc\\trainforfootball.mvc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BCE35D2B-5F34-4B3C-A88A-087098E701A1}|TrainForFootball.MVC\\TrainForFootball.MVC.csproj|solutionrelative:trainforfootball.mvc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BCE35D2B-5F34-4B3C-A88A-087098E701A1}|TrainForFootball.MVC\\TrainForFootball.MVC.csproj|c:\\users\\giuse\\desktop\\trainforfootball.mvc\\trainforfootball.mvc\\controllers\\standingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BCE35D2B-5F34-4B3C-A88A-087098E701A1}|TrainForFootball.MVC\\TrainForFootball.MVC.csproj|solutionrelative:trainforfootball.mvc\\controllers\\standingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BCE35D2B-5F34-4B3C-A88A-087098E701A1}|TrainForFootball.MVC\\TrainForFootball.MVC.csproj|c:\\users\\giuse\\desktop\\trainforfootball.mvc\\trainforfootball.mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BCE35D2B-5F34-4B3C-A88A-087098E701A1}|TrainForFootball.MVC\\TrainForFootball.MVC.csproj|solutionrelative:trainforfootball.mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BCE35D2B-5F34-4B3C-A88A-087098E701A1}|TrainForFootball.MVC\\TrainForFootball.MVC.csproj|c:\\users\\giuse\\desktop\\trainforfootball.mvc\\trainforfootball.mvc\\views\\match\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BCE35D2B-5F34-4B3C-A88A-087098E701A1}|TrainForFootball.MVC\\TrainForFootball.MVC.csproj|solutionrelative:trainforfootball.mvc\\views\\match\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BCE35D2B-5F34-4B3C-A88A-087098E701A1}|TrainForFootball.MVC\\TrainForFootball.MVC.csproj|c:\\users\\giuse\\desktop\\trainforfootball.mvc\\trainforfootball.mvc\\views\\matchresult\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BCE35D2B-5F34-4B3C-A88A-087098E701A1}|TrainForFootball.MVC\\TrainForFootball.MVC.csproj|solutionrelative:trainforfootball.mvc\\views\\matchresult\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BCE35D2B-5F34-4B3C-A88A-087098E701A1}|TrainForFootball.MVC\\TrainForFootball.MVC.csproj|c:\\users\\giuse\\desktop\\trainforfootball.mvc\\trainforfootball.mvc\\views\\standings\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BCE35D2B-5F34-4B3C-A88A-087098E701A1}|TrainForFootball.MVC\\TrainForFootball.MVC.csproj|solutionrelative:trainforfootball.mvc\\views\\standings\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BCE35D2B-5F34-4B3C-A88A-087098E701A1}|TrainForFootball.MVC\\TrainForFootball.MVC.csproj|c:\\users\\giuse\\desktop\\trainforfootball.mvc\\trainforfootball.mvc\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{BCE35D2B-5F34-4B3C-A88A-087098E701A1}|TrainForFootball.MVC\\TrainForFootball.MVC.csproj|solutionrelative:trainforfootball.mvc\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:350743133:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{f37f5141-198e-4181-9582-7b026ee8f915}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StandingsController.cs",
+              "DocumentMoniker": "C:\\Users\\giuse\\Desktop\\TrainForFootball.MVC\\TrainForFootball.MVC\\Controllers\\StandingsController.cs",
+              "RelativeDocumentMoniker": "TrainForFootball.MVC\\Controllers\\StandingsController.cs",
+              "ToolTip": "C:\\Users\\giuse\\Desktop\\TrainForFootball.MVC\\TrainForFootball.MVC\\Controllers\\StandingsController.cs",
+              "RelativeToolTip": "TrainForFootball.MVC\\Controllers\\StandingsController.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAqwBcAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T16:11:03.313Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\giuse\\Desktop\\TrainForFootball.MVC\\TrainForFootball.MVC\\Views\\Standings\\Index.cshtml",
+              "RelativeDocumentMoniker": "TrainForFootball.MVC\\Views\\Standings\\Index.cshtml",
+              "ToolTip": "C:\\Users\\giuse\\Desktop\\TrainForFootball.MVC\\TrainForFootball.MVC\\Views\\Standings\\Index.cshtml",
+              "RelativeToolTip": "TrainForFootball.MVC\\Views\\Standings\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-26T14:47:47.295Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\giuse\\Desktop\\TrainForFootball.MVC\\TrainForFootball.MVC\\Views\\MatchResult\\Index.cshtml",
+              "RelativeDocumentMoniker": "TrainForFootball.MVC\\Views\\MatchResult\\Index.cshtml",
+              "ToolTip": "C:\\Users\\giuse\\Desktop\\TrainForFootball.MVC\\TrainForFootball.MVC\\Views\\MatchResult\\Index.cshtml",
+              "RelativeToolTip": "TrainForFootball.MVC\\Views\\MatchResult\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-26T14:47:01.544Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\giuse\\Desktop\\TrainForFootball.MVC\\TrainForFootball.MVC\\Views\\Match\\Index.cshtml",
+              "RelativeDocumentMoniker": "TrainForFootball.MVC\\Views\\Match\\Index.cshtml",
+              "ToolTip": "C:\\Users\\giuse\\Desktop\\TrainForFootball.MVC\\TrainForFootball.MVC\\Views\\Match\\Index.cshtml",
+              "RelativeToolTip": "TrainForFootball.MVC\\Views\\Match\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-26T14:45:05.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\giuse\\Desktop\\TrainForFootball.MVC\\TrainForFootball.MVC\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "TrainForFootball.MVC\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\giuse\\Desktop\\TrainForFootball.MVC\\TrainForFootball.MVC\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "TrainForFootball.MVC\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-26T13:41:17.981Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\giuse\\Desktop\\TrainForFootball.MVC\\TrainForFootball.MVC\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "TrainForFootball.MVC\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\giuse\\Desktop\\TrainForFootball.MVC\\TrainForFootball.MVC\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "TrainForFootball.MVC\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-26T13:40:38.236Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "style.css",
+              "DocumentMoniker": "C:\\Users\\giuse\\Desktop\\TrainForFootball.MVC\\TrainForFootball.MVC\\wwwroot\\css\\style.css",
+              "RelativeDocumentMoniker": "TrainForFootball.MVC\\wwwroot\\css\\style.css",
+              "ToolTip": "C:\\Users\\giuse\\Desktop\\TrainForFootball.MVC\\TrainForFootball.MVC\\wwwroot\\css\\style.css",
+              "RelativeToolTip": "TrainForFootball.MVC\\wwwroot\\css\\style.css",
+              "ViewState": "AgIAAKcAAAAAAAAAAAAiwL0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-11-26T13:39:19.989Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
